@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block banner %}
+<div class="banner panel"
+     style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
+    
+    <div class="latest-panorama">
+        <span>Latest panorama, {{ latest.locale_date }}</span>
+        <h2>
+            <a href="{{ SITEURL }}/{{ latest.url }}">{{ latest.title }}</a>
+        </h2>
+    </div>
+</div>
+{% endblock banner %}
+
+{% block content %}
+
+filename: {{ output_file }}
+<div class='posts'>
+{% for article in articles_page.object_list %}
+    {% if not article.hide_in_index  %}
+    <section>
+        <header class="post-header">
+            <h3 class="post-title">
+                <a href="{{ SITEURL }}/{{ article.url }}"
+                   rel="bookmark"
+                   title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+            </h3>
+            <p class="post-meta">
+                <span title="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}</span> /
+                <span></span>
+              {% if article.category %}
+              <a href="{{ SITEURL }}/{{ article.category.url }}">{{
+              article.category }}</a>
+              {% endif %}
+            </p>
+                </header>
+        <div class=row>
+            {% if article.scene %}
+            <div class="large-12 columns">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
+                    <img src="{{ SITEURL }}/{{ SIZES_FOLDER }}/{{ article.scene }}/{{ article.scene }}-preview.jpg" />
+                </a>
+                <em>{{ article.hide_in_index }}</em>
+                {{ article.summary }}
+            </div>
+            {% else%}
+            <div class="large-12 columns"> {{ article.summary }} </div><!-- /.entry-content -->
+            {% endif%}
+        </div>
+    </section>
+    {% endif %}
+{% endfor %}
+
+
+</div><!-- /#content -->
+{% endblock content %}
+
+{% block footer %}
+{% include 'pagination.html' %}
+{% endblock %}
+
+
