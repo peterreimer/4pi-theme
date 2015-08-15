@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block banner %}
-<div class="banner panel"
-     style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
+<div style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
     
-    <div class="latest-panorama">
+    <div class="content latest-panorama">
         <span>Latest panorama, {{ latest.locale_date }}</span>
         <h2>
             <a href="{{ SITEURL }}/{{ latest.url }}">{{ latest.title }}</a>
