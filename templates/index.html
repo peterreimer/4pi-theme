@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
-{% block banner %}
-<div style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
+{% block hero %}
+<div class="hero" style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
     
-    <div class="content latest-panorama">
+    <div class="latest-panorama">
         <span>Latest panorama, {{ latest.locale_date }}</span>
         <h2>
             <a href="{{ SITEURL }}/{{ latest.url }}">{{ latest.title }}</a>
         </h2>
     </div>
+
 </div>
-{% endblock banner %}
+{% endblock hero %}
 
 {% block content %}
 

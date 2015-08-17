@@ -44,23 +44,29 @@ ul.keywords li {
     border-radius: 2px;
 }
 .hero {
-    position: relative;
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%) repeat scroll 0 0;
-}
-.hero div {
     height: 256px;
+    position: relative;
     background-repeat: repeat-x;
     background-position: center 0 ;
     color: #ffffff;
+
     /*text-shadow: 0 0 1px #000, 0 0 2px rgba(0, 0, 0, 0.9);*/
 }
 .hero .latest-panorama {
     bottom: 0;
     position: absolute;
-    padding-left: 3em;
     width: 100%;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%) repeat scroll 0 0;
 }
 
+.hero h2, .hero span {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 768px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
 .hero h2 a {
     color: #fff;
     text-shadow: 0 0 1px #000, 0 0 2px rgba(0, 0, 0, 0.9);
@@ -71,10 +77,17 @@ ul.keywords li {
 
 }
 
+header h1 {
+    margin: 0;
+}
+.pure-menu-heading {
+    padding: 0 1em;
+}
+
 .custom-wrapper {
-    margin-bottom: 1em;
+    margin-bottom: 0em;
     -webkit-font-smoothing: antialiased;
-    height: 2.1em;
+    height: 3.1em;
     overflow: hidden;
     -webkit-transition: height 0.5s;
     -moz-transition: height 0.5s;
