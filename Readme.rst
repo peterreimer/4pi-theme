@@ -1,13 +1,14 @@
-Pannellum Generator
-===================
+Pelican theme for my personal website
+=====================================
 
-requires fourpi.pannellum
+Based on and uses code from
 
-``pelican-pannellum`` creates tiles and json configuration files for the `Pannellum Viewer`_
+    *  `Pure.css`_
+    *  `Pannellum`_
+    *  `Leaflet`_
 
-.. _Pannellum Viewer: https://pannellum.org/
+.. _Pure.css: http://purecss.io/
+.. _Pannellum: https://pannellum.org/
+.. _Leaflet: http://leafletjs.com/
 
-
-Requirements
-------------
 
