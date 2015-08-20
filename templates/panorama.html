@@ -26,45 +26,26 @@
     {{ article.title}} &mdash; {{ SITENAME }}
 {% endblock title %}
 
-{% block content %}
-<section id="content">
 
-{% if article.scene %}
-  <div class="pure-g panel">
-      <div class="pure-u-1-1">
+{% block hero %}
+  <div class="hero pannellum">
+      <div class="content">
           <iframe id="pannellum" src="{{ PANNELLUM.tile_url }}/pannellum.html?tour={{ article.scene }}/tour.json"
             allowfullscreen
             title="pannellum panorama viewer"></iframe>
       </div>
   </div>
-{% endif %}
+{% endblock %}
+
+{% block content %}
+<section id="content">
+{% include 'previous-next.html' %}
+
 
   <div class="pure-g">
       <div class="pure-u-1">
           <header>
-            <p class="post-meta">
-               <span class="fa fa-calendar"></span> <span title="{{ article.date.isoformat() }}"> {{ article.locale_date }}</span>
-                {% if article.modified %}
-                    <span class="modified" title="{{ article.modified.isoformat() }}">
-                        / {{ article.locale_modified }}
-                    </span>
-                {% endif %}
-              {% if article.category %}
-                    in <span class="fa fa-folder-o"></span> <a href="{{ SITEURL }}/{{ article.category.url }}">{{
-              article.category }}</a>
-              {% endif %}
-            </p>
-          
-            <h2 class="post-title">
-                 {{ article.title }}
-            </h2>
-                {% import 'translations.html' as translations with context %}
-                {{ translations.translations_for(article) }}
-            <ul class="post-meta keywords">
-                {% for tag in article.tags %}
-                    <li><span class="fa fa-tag"></span> <a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }}</a></li>
-                {% endfor %}
-            </ul>
+          {% include 'metadata.html' %}
           </header>
       </div>
   </div>
@@ -97,6 +78,13 @@
                         <th>Exposure</th>
                         <td>1/{{ article.exif.exposure }}&nbsp;<abbr title="seconds">s</abbr></td>
                     </tr>
+                    {% if article.exif.taken %}
+                    <tr>
+                        <th>Taken</th>
+                        <td>{{ article.exif.taken.strftime("%d.%m.%Y")  }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if article.exif.comment %}
                     <tr>
                         <th>Comment</th>
                         <td>
@@ -106,6 +94,15 @@
                             {% endfor %}
                             </ul>
                         </td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <th>Latitude</th>
+                        <td>{{ article.Latitude }}</td>
+                    </tr>
+                    <tr>
+                        <th>Longitude</th>
+                        <td>{{ article.Longitude }}</td>
                     </tr>
                 </tbody>    
             </table>
@@ -126,7 +123,6 @@
 {% endblock %}
 
 {% block footer %}
-{% include 'previous-next.html' %}
 {% endblock %}
 
 

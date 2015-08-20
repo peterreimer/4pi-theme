@@ -9,6 +9,7 @@
     <meta property="og:image" content="{{ SITEURL }}/{{ PANNELLUM.sizes_folder }}/{{article.scene}}/{{article.scene}}-preview.jpg" />
     {% endblock opengraph %}
 
+
     {% for keyword in article.keywords %}
     <meta name="keywords" contents="{{keyword}}" />
     {% endfor %}
@@ -26,27 +27,14 @@
 {% endblock title %}
 
 {% block content %}
-<section id="content" class="body">
+<section id="content">
+{% include 'previous-next.html' %}
 
 
   <div class="pure-g">
       <div class="pure-u-1">
           <header>
-            <h2 class="post-title">
-              <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                 title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-                {% import 'translations.html' as translations with context %}
-                {{ translations.translations_for(article) }}
-                <p class="post-meta">
-                    <span title="{{ article.date.isoformat() }}"> {{ article.locale_date }}</span> /
-                    {% if article.modified %}
-                        <span class="modified" title="{{ article.modified.isoformat() }}"> {{ article.locale_modified }} </span>
-                    {% endif %}
-                  {% if article.category %}
-                  <a href="{{ SITEURL }}/{{ article.category.url }}">{{
-                  article.category }}</a>
-                  {% endif %}
-                </p>
+              {% include 'metadata.html' %}
           </header>
       </div>
   </div>
@@ -62,7 +50,6 @@
 {% endblock %}
 
 {% block footer %}
-{% include 'previous-next.html' %}
 {% endblock %}
 
 {% block javascript %}

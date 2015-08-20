@@ -18,6 +18,21 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 1em;
     padding-right: 1em;
 }
+
+pre {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    display: block;
+    font-size: 0.9em;
+    /*line-height: 1.42857;*/
+    margin: 0 0 10px;
+    padding: 9.5px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
 ul.keywords  {
     list-style: none;
     padding: 0;
@@ -26,14 +41,18 @@ ul.keywords li {
     display: inline-block;
 }
 
-
+#menu {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
 #worldmap {
      height: 400px;
 }
 #map {
      height: 400px;
 }
-
+.pannellum {
+    background-color: #2d2d2d;
+}
 #pannellum {
     border-style:none;
     width:100%;
@@ -44,13 +63,15 @@ ul.keywords li {
     border-radius: 2px;
 }
 .hero {
-    height: 256px;
     position: relative;
     background-repeat: repeat-x;
     background-position: center 0 ;
     color: #ffffff;
 
     /*text-shadow: 0 0 1px #000, 0 0 2px rgba(0, 0, 0, 0.9);*/
+}
+.banner {
+    height: 256px;
 }
 .hero .latest-panorama {
     bottom: 0;

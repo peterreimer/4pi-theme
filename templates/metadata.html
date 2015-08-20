@@ -1,0 +1,24 @@
+            <p class="post-meta">
+               <span class="fa fa-calendar"></span> <span title="{{ article.date.isoformat() }}"> {{ article.locale_date }}</span>
+                {% if article.modified %}
+                    <span class="modified" title="{{ article.modified.isoformat() }}">
+                        / {{ article.locale_modified }}
+                    </span>
+                {% endif %}
+              {% if article.category %}
+                    in <span class="fa fa-folder-o"></span> <a href="{{ SITEURL }}/{{ article.category.url }}">{{
+              article.category }}</a>
+              {% endif %}
+            </p>
+          
+            <h2 class="post-title">
+                 {{ article.title }}
+            </h2>
+                {% import 'translations.html' as translations with context %}
+                {{ translations.translations_for(article) }}
+            <ul class="post-meta keywords">
+                {% for tag in article.tags %}
+                    <li><span class="fa fa-tag"></span> <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+

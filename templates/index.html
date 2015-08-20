@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-
 {% block hero %}
-<div class="hero" style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
+{% if output_file == 'index.html' %}
+<div class="hero banner" style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
     
     <div class="latest-panorama">
         <span>Latest panorama, {{ latest.locale_date }}</span>
@@ -11,21 +11,22 @@
     </div>
 
 </div>
+{% endif %}
 {% endblock hero %}
 
 {% block content %}
 
-filename: {{ output_file }}
+
 <div class='posts'>
 {% for article in articles_page.object_list %}
-    {% if not article.hide_in_index  %}
+    {% if not article.hide_in_indexc and output_file != 'index_html'  %}
     <section>
         <header class="post-header">
-            <h3 class="post-title">
+            <h2 class="post-title">
                 <a href="{{ SITEURL }}/{{ article.url }}"
                    rel="bookmark"
                    title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-            </h3>
+            </h2>
             <p class="post-meta">
                 <span title="{{ article.date.isoformat() }}">
                 {{ article.locale_date }}</span> /
@@ -42,7 +43,6 @@ filename: {{ output_file }}
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
                     <img src="{{ SITEURL }}/{{ SIZES_FOLDER }}/{{ article.scene }}/{{ article.scene }}-preview.jpg" />
                 </a>
-                <em>{{ article.hide_in_index }}</em>
                 {{ article.summary }}
             </div>
             {% else%}
