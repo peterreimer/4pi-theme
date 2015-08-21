@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block hero %}
 {% if output_file == 'index.html' %}
-<div class="hero banner" style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest.scene }}/{{ latest.scene }}-banner.jpg);">
+<div class="hero banner" style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest_scene.scene }}/{{ latest_scene.scene }}-banner.jpg);">
     
     <div class="latest-panorama">
-        <span>Latest panorama, {{ latest.locale_date }}</span>
+        <span>Latest panorama, {{ latest_scene.locale_date }}</span>
         <h2>
-            <a href="{{ SITEURL }}/{{ latest.url }}">{{ latest.title }}</a>
+            <a href="{{ SITEURL }}/{{ latest_scene.url }}">{{ latest_scene.title }}</a>
         </h2>
     </div>
 
@@ -19,7 +19,9 @@
 
 <div class='posts'>
 {% for article in articles_page.object_list %}
-    {% if not article.hide_in_indexc and output_file != 'index_html'  %}
+    {% if article.latest and  output_file == 'index.html' %}
+        {# on homepage index.html the latest scene/pano is treated separatly #}
+    {% else %}
     <section>
         <header class="post-header">
             <h2 class="post-title">
