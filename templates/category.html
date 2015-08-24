@@ -1,5 +1,40 @@
-{% extends "index.html" %}
-{% block title %}{{ SITENAME }} - {{ category }}{% endblock %}
-{% block banner %}
-<!-- banner only on homepage -->
-{% endblock banner %}
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ category }}</h2>
+<div class='posts'>
+{% for article in articles_page.object_list %}
+    <section>
+        <header class="post-header">
+            <h3 class="post-title">
+                <a href="{{ SITEURL }}/{{ article.url }}"
+                   rel="bookmark"
+                   title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+            </h3>
+            <p class="post-meta">
+                <span title="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}</span> /
+                <span></span>
+            </p>
+        </header>
+
+        <div class="">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
+                <img src="{{ SITEURL }}/{{ SIZES_FOLDER }}/{{ article.scene }}/{{ article.scene }}-preview.jpg" />
+            </a>
+            {{ article.summary }}
+        </div>
+
+    </section>
+
+{% endfor %}
+
+
+</div><!-- /#content -->
+{% endblock content %}
+
+{% block footer %}
+{% include 'pagination.html' %}
+{% endblock %}
+
+
