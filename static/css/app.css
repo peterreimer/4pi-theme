@@ -113,6 +113,21 @@ header h1 {
     padding: 0 1em;
 }
 
+/*previous next*/
+.post-previous {
+    left: 10px;
+    position: fixed;
+    top: 240px;
+    z-index: 100;
+}
+.post-next {
+    right: 10px;
+    position: fixed;
+    top: 240px;
+    z-index: 100;
+}
+
+
 .custom-wrapper {
     margin-bottom: 0em;
     -webkit-font-smoothing: antialiased;

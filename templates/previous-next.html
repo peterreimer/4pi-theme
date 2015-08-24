@@ -1,20 +1,17 @@
-<div class="pure-g post-navigation">
+<div class="post-navigation">
 
-    <div class="post-previous pure-u-1-2">
+    <div class="post-previous">
     {% if article.prev_article %}
-        <a href="{{ SITEURL }}/{{ article.prev_article.url}}">
-           <span>Previous</span>
-           {{ article.prev_article.title }}
+        <a href="{{ SITEURL }}/{{ article.prev_article.url}}" title="{{ article.prev_article.title }}">
+           <img src="{{ SITEURL }}/theme/images/arrow-previous.png" alt="zurück" />
         </a>
     {% endif %}
     </div>
 
-    <div class="post-next pure-u-1-2">
+    <div class="post-next">
     {% if article.next_article %}
-        <a href="{{ SITEURL }}/{{ article.next_article.url}}"
-           title="{{ article.next_article.title }}">
-            <span>Next</span>
-           {{ article.next_article.title }}
+        <a href="{{ SITEURL }}/{{ article.next_article.url}}" title="{{ article.next_article.title }}">
+           <img src="{{ SITEURL }}/theme/images/arrow-next.png" alt="zurück" />
         </a>
     {% endif %}
     </div>
