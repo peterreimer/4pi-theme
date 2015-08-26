@@ -17,14 +17,17 @@
                 <span></span>
             </p>
         </header>
-
-        <div class="">
-            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
-                <img src="{{ SITEURL }}/{{ SIZES_FOLDER }}/{{ article.scene }}/{{ article.scene }}-preview.jpg" />
-            </a>
-            {{ article.summary }}
-        </div>
-
+        {% if article.scene %}
+            <p class="">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
+                    <img src="{{ SITEURL }}/{{ SIZES_FOLDER }}/{{ article.scene }}/{{ article.scene }}-preview.jpg" />
+                </a>
+            </p>
+        {% else %}
+            <p>
+                {{ article.summary }}
+            </p>
+        {% endif %}
     </section>
 
 {% endfor %}
