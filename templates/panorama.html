@@ -41,7 +41,9 @@
 <section id="content">
 {% include 'previous-next.html' %}
 
+<a href="{{ PANNELLUM.tile_url }}/{{ article.scene }}/tour.json">json</a>
 
+<article>
   <div class="pure-g">
       <div class="pure-u-1">
           <header>
@@ -51,12 +53,14 @@
   </div>
 
   <div class="pure-g">
+
       <div class="pure-u-1 pure-u-md-1-3">
           <div class="l-box">
           <h3>Description</h3>
           <p>{{ article.content }}</p>
           </div>
       </div>
+
       <div class="pure-u-1 pure-u-md-1-3">
           <div class="l-box">
           <h3>Details</h3>
@@ -118,6 +122,7 @@
           </div>
       </div>
   </div>
+</article>
 </section>
 
 {% endblock %}

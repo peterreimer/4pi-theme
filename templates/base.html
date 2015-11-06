@@ -69,11 +69,10 @@
                          alt="{{ SITENAME }} {% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}" />
                 </a>
             </h1>
-            <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
         </div>
     </div>
     <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pure-menu pure-menu-horizontal custom-can-transform">
+        <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
                 {% for title, link in MENUITEMS %}
                     <li class="pure-menu-item">
@@ -99,13 +98,13 @@
             </ul>
         </div>
     </div>
-    <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform">
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Yahoo</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">W3C</a></li>
-            </ul>
-        </div>
+    <div class="pure-u-1 pure-u-md-1-3 search">
+        <!--
+        <form >
+            <input type="text" />
+            <button type="submit" class="pure-button pure-button-primary">Suche</button>
+        </form>
+        -->
     </div>
 </header>
 {% block hero %}

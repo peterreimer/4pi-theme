@@ -47,10 +47,12 @@ ul.keywords  {
 ul.keywords li {
     display: inline-block;
 }
-
+.search {
+    text-align: right;
+}
 #menu {
     background-color: #ffffff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);*/
     border-bottom: 1px solid #b7b7b7;
 }
 .pure-menu-link {
@@ -126,6 +128,7 @@ ul.keywords li {
 header h1 {
     margin: 0;
     position: absolute;
+    z-index: 99999;
 }
 .pure-menu-heading {
     padding: 0 1em;
