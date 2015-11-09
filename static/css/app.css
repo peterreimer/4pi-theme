@@ -93,6 +93,8 @@ ul.keywords li {
 .exif ul {
     margin: 0;
     list-style: none;
+    padding-left: 0;
+    white-space: nowrap;
 }
 .leaflet-popup-content-wrapper {
     border-radius: 2px;
