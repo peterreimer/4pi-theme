@@ -86,12 +86,20 @@
                     </tr>
                     {% endif %}
                     
+                    {% if article.exif.iso %}
+                    <tr>
+                        <th>ISO</th>
+                        <td>{{ article.exif.iso }}</td>
+                    </tr>
+                    {% endif %}
+                    
                     {% if article.exif.taken %}
                     <tr>
                         <th>Taken</th>
                         <td>{{ article.exif.taken.strftime("%d.%m.%Y")  }}</td>
                     </tr>
                     {% endif %}
+
                     {% if article.exif.comment %}
                     <tr>
                         <th>Comment</th>
@@ -104,6 +112,7 @@
                         </td>
                     </tr>
                     {% endif %}
+
                     <tr>
                         <th>Latitude</th>
                         <td>{{ article.Latitude }}</td>
@@ -114,7 +123,7 @@
                     </tr>
                 </tbody>    
             </table>
-          <p>exif {{ article.exif }}</p>
+          <pre>exif {{ article.exif }}</pre>
           </div>
       </div>
   
