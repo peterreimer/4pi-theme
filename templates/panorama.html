@@ -73,7 +73,12 @@
                 
                 {% if article.exif.exposure %}
                     <dt>Verschlußzeit</dt>
-                    <dd>1/{{ article.exif.exposure }}&nbsp;<abbr title="seconds">s</abbr></dd>
+                    <dd>1/{{ article.exif.exposure }}&nbsp;<abbr title="Sekunden">s</abbr></dd>
+                {% endif %}
+                
+                {% if article.exif.count %}
+                    <dt>Aufnahmen</dt>
+                    <dd>{{ article.exif.count }}</dd>
                 {% endif %}
                 
                 {% if article.exif.iso %}
