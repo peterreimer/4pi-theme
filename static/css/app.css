@@ -85,10 +85,15 @@ ul.keywords li {
     width:100%;
     height:400px;
 }
-.exif th,
-.exif td {
-    text-align: left;
-    vertical-align: top;
+.exif dd {
+    font-weight: bold;
+}
+.exif dt::after {
+    content: ":";
+}
+.exif dt {
+    float:left;
+    padding-right: 1em;
 }
 .exif ul {
     margin: 0;
