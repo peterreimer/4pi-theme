@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/grids-responsive-min.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/tables-min.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/leaflet.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygmentize.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/app.css" />
     <!--<![endif]-->
     <!--<link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" />-->
@@ -114,15 +115,28 @@
     <div class="pure-g">
         <div class="pure-u-1">
             <div>        
-            {% block content %}
-            {% endblock %}
+                {% block content %}
+                {% endblock %}
             </div>        
             <div class="footer">        
                 {% block footer %}
                 {% endblock %}
             </div>        
         </div>
+    </div>
 </div>
+<footer>
+    <div class="content">
+        <div class="pure-g">
+            <div class="pure-u-1">
+            (c) Peter Reimer 
+            <a href="{{ SITEURL }}/pages/impressum.html">
+                Impressum & Datenschutz
+            </a>
+            </div>
+        </div>
+    </div>
+</footer>
 </div>
 {% block footer_javascript %}
     <script src="{{ SITEURL }}/theme/js/app.js"></script>

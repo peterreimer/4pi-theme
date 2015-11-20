@@ -76,7 +76,7 @@
                     <dd>1/{{ article.exif.exposure }}&nbsp;<abbr title="Sekunden">s</abbr></dd>
                 {% endif %}
                 
-                {% if article.exif.count %}
+                {% if article.exif.count > 1 %}
                     <dt>Aufnahmen</dt>
                     <dd>{{ article.exif.count }}</dd>
                 {% endif %}
@@ -107,7 +107,9 @@
                 <dt>Längengrad</dt>
                 <dd>{{ article.Longitude }}</dd>
             </dl>
-          <pre>exif {{ article.exif }}</pre>
+          <!--
+            <pre>exif {{ article.exif }} </pre>
+          -->
           </div>
       </div>
   
