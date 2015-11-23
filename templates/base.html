@@ -58,86 +58,119 @@
 </head>
 
 <body>
-<div id="layout">
-
-<header class="custom-wrapper pure-g" id="menu">
-    <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pure-menu">
-            <h1>
-                <a class="pure-menu-heading custom-brand"
-                   href="{{ SITEURL }}/" title="Go to homepage">
-                    <img src="{{ SITEURL }}/theme/images/4pi-logo.svg"
-                         alt="{{ SITENAME }} {% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}" />
-                </a>
-            </h1>
+<div id="wrap">
+    <header class="custom-wrapper pure-g" id="menu">
+        <div class="pure-u-1 pure-u-md-1-3">
+            <div class="pure-menu">
+                <h1>
+                    <a class="pure-menu-heading custom-brand"
+                       href="{{ SITEURL }}/" title="Go to homepage">
+                        <img src="{{ SITEURL }}/theme/images/4pi-logo.svg"
+                             alt="{{ SITENAME }} {% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}" />
+                    </a>
+                </h1>
+            </div>
         </div>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pure-menu pure-menu-horizontal">
-            <ul class="pure-menu-list">
-                {% for title, link in MENUITEMS %}
-                    <li class="pure-menu-item">
-                        <a class="pure-menu-link" href="{{ link }}">{{ title }}</a>
-                    </li>
-                {% endfor %}
-                
-                {% if DISPLAY_CATEGORIES_ON_MENU %}
-                  {% for cat, null in categories %}
-                      <li {% if cat == category %} class="pure-menu-item selected"{% else %} class="pure-menu-item"{% endif %}>
-                        <a class="pure-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
-                      </li>
-                  {% endfor %}
-                {% endif %}
-                
-                {% if DISPLAY_PAGES_ON_MENU %}
-                  {% for p in PAGES %}
-                    <li {% if p == page %}class="pure-menu-item selected"{% else %} class="pure-menu-item"{% endif %}>
-                        <a class="pure-menu-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-                    </li>
-                  {% endfor %}
-                {% endif %}
-            </ul>
+        <div class="pure-u-1 pure-u-md-1-3">
+            <div class="pure-menu pure-menu-horizontal">
+                <ul class="pure-menu-list">
+                    {% for title, link in MENUITEMS %}
+                        <li class="pure-menu-item">
+                            <a class="pure-menu-link" href="{{ link }}">{{ title }}</a>
+                        </li>
+                    {% endfor %}
+                    
+                    {% if DISPLAY_CATEGORIES_ON_MENU %}
+                      {% for cat, null in categories %}
+                          <li {% if cat == category %} class="pure-menu-item selected"{% else %} class="pure-menu-item"{% endif %}>
+                            <a class="pure-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                          </li>
+                      {% endfor %}
+                    {% endif %}
+                    
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                      {% for p in PAGES %}
+                        <li {% if p == page %}class="pure-menu-item selected"{% else %} class="pure-menu-item"{% endif %}>
+                            <a class="pure-menu-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-3 search">
-        <!--
-        <form >
-            <input type="text" />
-            <button type="submit" class="pure-button pure-button-primary">Suche</button>
-        </form>
-        -->
-    </div>
-</header>
-{% block hero %}
-{% endblock hero %}
+        <div class="pure-u-1 pure-u-md-1-3 search">
+            <!--
+            <form >
+                <input type="text" />
+                <button type="submit" class="pure-button pure-button-primary">Suche</button>
+            </form>
+            -->
+        </div>
+    </header>
+    {% block hero %}
+    {% endblock hero %}
 
-<div class="content">
-    <div class="pure-g">
-        <div class="pure-u-1">
-            <div>        
-                {% block content %}
-                {% endblock %}
-            </div>        
-            <div class="footer">        
-                {% block footer %}
-                {% endblock %}
-            </div>        
+    <div class="content clearfix" >
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div>        
+                    {% block content %}
+                    {% endblock %}
+                </div>        
+                <div class="footer">        
+                    {% block footer %}
+                    {% endblock %}
+                </div>        
+            </div>
         </div>
     </div>
 </div>
-<footer>
+<footer class="doormat">
     <div class="content">
         <div class="pure-g">
-            <div class="pure-u-1">
-            (c) Peter Reimer 
-            <a href="{{ SITEURL }}/pages/impressum.html">
-                Impressum & Datenschutz
-            </a>
+            <div class="pure-u-1-2 links">
+                <abbr title="Copyright">&copy;</abbr> 2002 - 2015 Peter Reimer 
+                    <ul>
+                        <li>
+                            <a href="{{ SITEURL }}/downloads/">
+                                Downloads
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/pages/impressum.html">
+                                Impressum & Datenschutz
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/pages/kontakt.html">
+                                Kontakt
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="pure-u-1-2 social">
+                <ul>
+                    <li>
+                        <a href="https://github.com/peterreimer">
+                        <i class="fa fa-github-square"></i>
+                        <span>github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.flickr.com/photos/4pi">
+                        <i class="fa fa-flickr"></i>
+                        <span>flickr</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">
+                        <i class="fa fa-rss-square"></i>
+                        <span>rss</span></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </footer>
-</div>
+
 {% block footer_javascript %}
     <script src="{{ SITEURL }}/theme/js/app.js"></script>
 {% endblock footer_javascript %}

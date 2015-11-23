@@ -6,6 +6,8 @@ html, button, input, select, textarea,
 body {
     background-color: #F2F2EE;
 }
+html, body, #wrap {height: 100%;}
+body > #wrap {height: auto; min-height: 100%;}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -135,11 +137,53 @@ ul.keywords li {
     text-shadow: 0 0 1px #000, 0 0 2px rgba(0, 0, 0, 0.9);
 }
 
-footer {
-    background-color: #2d2d2d;
-    color: #ffffff;
+#wrap > .content {padding-bottom: 100px;} 
+
+.doormat {
+	position: relative;
+	margin-top: -100px; /* Negativer Wert der Footer-Höhe */
+	height: 100px;
+	clear:both;
 }
 
+.doormat {
+    padding: 1em 0;
+    background-color: #444;
+    color: #ccc;
+}
+.doormat ul {
+    list-style: none;
+    padding-left: 0;
+}
+.doormat .links ul li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.doormat a {
+    color: #ccc;
+}
+.doormat a:hover {
+    color: #fff;
+}
+.doormat .links a:hover {
+    text-shadow: 0 0 1px #fff;
+}
+.doormat .social {
+    text-align: right;
+}
+
+.doormat .social ul {
+    margin-top: 0;
+    font-size: 200%;
+}
+.doormat .social ul li {
+    display: inline-block;
+    margin-right: .5em;
+}
+.doormat .social ul li span {
+    display: none;
+}
 @media (min-width: 48em) {
 
 }
