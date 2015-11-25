@@ -41,7 +41,9 @@
 <section id="content">
 {% include 'previous-next.html' %}
 
-<a href="{{ PANNELLUM.tile_url }}/{{ article.scene }}/tour.json">json</a>
+{% if PANNELLUM.debug %}
+    <a href="{{ PANNELLUM.tile_url }}/{{ article.scene }}/tour.json">json</a>
+{% endif %}
 
 <article>
   <div class="pure-g">

@@ -6,11 +6,11 @@ $.getJSON(map_data, function(data) {
     // SKOBBLER
     var skobblerApiKey = "070b3f599377c0f1008b3a445ad680d8",
         //skobblerUrl = 'http://tiles{s}.api.skobbler.net/tiles/{z}/{x}/{y}.png?api_key=' + skobblerApiKey,
-        skobblerUrl = 'http://tiles{s}-' + skobblerApiKey + '.skobblermaps.com/TileService/tiles/2.0/0100111010/0/{z}/{x}/{y}.png' ,
+        skobblerUrl = 'https://tiles{s}-' + skobblerApiKey + '.skobblermaps.com/TileService/tiles/2.0/0100111010/0/{z}/{x}/{y}.png' ,
         skobblerAttribution =  'Map data &copy; <a href="http://www.openstreetmap.org" target="_blank">OpenStreetMap</a> contributors, <a href="http://www.openstreetmap.org/copyright" target="_blank">Terms</a>, Tiles courtesy of <a href="http://www.skobbler.com" target="_blank">skobbler</a>';
 
     // OPENSTREETMAP
-    var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+    var osmUrl = 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
         osmAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
 
 
@@ -40,7 +40,7 @@ $.getJSON(map_data, function(data) {
     var bounds = L.latLngBounds(allMarkers);
     var cities = L.layerGroup(panopins);
 
-    var map = L.map('worldmap', {layers:[osmMap,cities]})
+    var map = L.map('worldmap', {layers:[skobblerMap,cities]})
 
     map.fitBounds(bounds);
 
