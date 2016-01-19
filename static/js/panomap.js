@@ -20,7 +20,7 @@ $.getJSON(map_data, function(data) {
     var allMarkers = [];
     
     $.each(data, function( label, details ) {
-        var position = L.latLng(details.lat, details.lng);
+        var position = L.latLng(details.latlng);
         var title = details.title;
         var url = [site_url,details.url].join("/");
         var label = ([

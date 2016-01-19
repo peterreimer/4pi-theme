@@ -21,8 +21,8 @@ $.getJSON(map_data, function(data) {
     var allMarkers = [];
     
     $.each(data, function( label, details ) {
-        if ( details.lat != null  || details.lng != null ){
-            var position = L.latLng(details.lat, details.lng);
+        if ( details.latlng != null ){
+            var position = L.latLng(details.latlng);
             var title = details.title;
             var icon_url = [site_url,'sizes', label, label + '-icon.jpg'].join("/");
             var url = [site_url,details.url].join("/");
