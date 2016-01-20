@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}" >
 <head>
-    {% block head %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    {% block head %}
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300:300italic:700" />
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pure-min.css" />
@@ -20,15 +20,9 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/app.css" />
     <!--<![endif]-->
     <!--<link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" />-->
-
-
-    {% block javascript %}
     <script src="{{ SITEURL }}/helper.js"></script>
     <script src="{{ SITEURL }}/theme/js/jquery.js"></script>
-    {% endblock javascript %}
-    {% block opengraph %}
     <meta property="og:site_name" content="{{ SITENAME }}" />
-    {% endblock opengraph %}
     {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
     {% endif %}

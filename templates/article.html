@@ -1,15 +1,10 @@
 {% extends "base.html" %}
 {% block head %}
     {{ super() }}
-    {% block opengraph %}
-    {{ super() }}
     <meta property="og:type" content="place" />
     <meta property="og:title" content="{{ article.title }}" />
     <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
     <meta property="og:image" content="{{ SITEURL }}/{{ PANNELLUM.sizes_folder }}/{{article.scene}}/{{article.scene}}-preview.jpg" />
-    {% endblock opengraph %}
-
-
     {% for keyword in article.keywords %}
     <meta name="keywords" contents="{{keyword}}" />
     {% endfor %}
