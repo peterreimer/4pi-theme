@@ -38,18 +38,16 @@
               article.category }}</a>
               {% endif %}
             </p>
-                </header>
+        </header>
         <div class=row>
-            {% if article.scene %}
+            {% if article.image %}
             <div class="large-12 columns">
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
-                    <img src="{{ SITEURL }}/{{ SIZES_FOLDER }}/{{ article.scene }}/{{ article.scene }}-preview.jpg" />
+                    <img src="{{ SITEURL }}/{{ article.image }}" />
                 </a>
-                {{ article.summary }}
             </div>
-            {% else%}
+            {% endif %}
             <div class="large-12 columns"> {{ article.summary }} </div><!-- /.entry-content -->
-            {% endif%}
         </div>
     </section>
     {% endif %}
