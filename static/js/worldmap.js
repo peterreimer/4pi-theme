@@ -29,9 +29,9 @@ $.getJSON(map_data, function(data) {
             var label = ([
                 "<strong>" + title+ "</strong><br />",
                 "<a href=" + url + "><img src=" + icon_url + " /></a><br />",
-                "<a href=" + url + ">open</a>"
+                "<a href=" + url + ">ansehen</a>"
                 ]).join("\n");
-            panopin = L.marker(position).bindPopup(label).openPopup();
+            panopin = L.marker(position).bindPopup(label, minWidth=150).openPopup();
             panopins.push(panopin);
             allMarkers.push(position);
         };
