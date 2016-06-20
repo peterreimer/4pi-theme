@@ -200,7 +200,7 @@ ul.keywords li {
 
 }
 
-header h1 {
+h1.home {
     margin: 0;
     position: absolute;
     z-index: 99999;
@@ -289,7 +289,10 @@ header h1 {
 }
 
 @media (max-width: 47.999em) {
-
+    h1.home {
+        position: relative;
+        text-align: center;
+    }
     .custom-menu-3 {
         text-align: left;
     }
