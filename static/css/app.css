@@ -300,6 +300,11 @@ h1.home {
     .custom-toggle {
         display: block;
     }
-
+    .search {
+        display: none;
+    }
+    .pure-menu-horizontal {
+        text-align: center;
+    }
 }
 
