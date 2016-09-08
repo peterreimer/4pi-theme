@@ -17,6 +17,8 @@
     <meta name="tags" contents="{{tag}}" />
     {% endfor %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/leaflet.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pannellum.css" />
+    <script type="text/javascript" src="{{ SITEURL }}/theme/js/pannellum.js"></script> 
 {% endblock %}
 
 {% block title %}
@@ -27,9 +29,8 @@
 {% block hero %}
   <div class="hero pannellum">
       <div class="content">
-          <iframe id="pannellum" src="{{ PANNELLUM.tile_url }}/pannellum.html?tour={{ article.scene }}/tour.json"
-            allowfullscreen
-            title="pannellum panorama viewer"></iframe>
+      <div id="panorama"></div>
+      <script type="text/javascript" src="{{ SITEURL }}/theme/js/panorama.js"></script> 
       </div>
   </div>
 {% endblock %}
