@@ -3,16 +3,17 @@
     {{ super() }}
     <meta property="og:type" content="place" />
     <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:description" content="{{ article.description }}" />
     <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
     <meta property="og:image" content="{{ SITEURL }}/{{ PANNELLUM.sizes_folder }}/{{article.scene}}/{{article.scene}}-preview.jpg" />
     <meta property="place:location:latitude"  content="{{ article.exif.lat}}" /> 
     <meta property="place:location:longitude" content="{{ article.exif.lng}}" /> 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="{{ TWITTER_USERNAME }}" />
     {% for keyword in article.keywords %}
     <meta name="keywords" contents="{{keyword}}" />
     {% endfor %}
-    {% for description in article.description %}
-    <meta name="description" contents="{{description}}" />
-    {% endfor %}
+    <meta name="description" contents="{{ article.description }}" />
     {% for tag in article.tags %}
     <meta name="tags" contents="{{tag}}" />
     {% endfor %}
