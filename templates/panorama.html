@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/leaflet.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pannellum.css" />
     <script type="text/javascript" src="{{ SITEURL }}/theme/js/pannellum.js"></script> 
+    <script src="{{ SITEURL }}/theme/js/leaflet.js"></script>
 {% endblock %}
 
 {% block title %}
@@ -41,7 +42,8 @@
 {% include 'previous-next.html' %}
 
 {% if PANNELLUM.debug %}
-    <a href="tour.json">json</a>
+    <a href="tour.json">json</a><br />
+    <input id="hfov" type="text" />
 {% endif %}
 
 <article>
@@ -134,6 +136,5 @@
 
 {% block footer_javascript %}
 {{ super() }}
-<script src="{{ SITEURL }}/theme/js/leaflet.js"></script>
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/panomap.js"></script>
+<!--<script type="text/javascript" src="{{ SITEURL }}/theme/js/panomap.js"></script>-->
 {% endblock footer_javascript %}
