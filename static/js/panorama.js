@@ -1,5 +1,5 @@
-var tour_data = "//" + location.host + location.pathname + "tour.json"
-var map_data = "//" + location.host + location.pathname + "loc.json"
+var tour_data = "//" + location.host + location.pathname + "tour.json";
+var map_data = "//" + location.host + location.pathname + "loc.json";
 
 $.getJSON(map_data, function(data) {
     
