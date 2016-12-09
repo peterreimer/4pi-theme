@@ -35,15 +35,17 @@ $.getJSON(tour_data, function(data) {
     pv.on("mouseup", radar);
     
     var scenes = data['scenes'];
-    
     $.each(scenes, function( scene, details ) {
-        console.log(details);
         var position = L.latLng(details.latlng);
         var title = details.title;
         var label = ([
             "<strong>" + title+ "</strong><br />",            
             ]).join("\n");
-        panopin = L.marker(position).bindPopup(label).openPopup();
+        panopin = L.marker(position).bindPopup(label)
+        panopin.on('click', function() {
+          pv.loadScene(scene);
+          console.log('loading scene ' + scene);
+        });
         panopins.push(panopin);
         allMarkers.push(position);
     });   
