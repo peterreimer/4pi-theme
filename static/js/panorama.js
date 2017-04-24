@@ -31,6 +31,7 @@ $.getJSON(tour_data, function(data) {
     pv = pannellum.viewer("panorama", data);
     pv.on("scenechange", function(){
         console.log("Pin versetzen");
+        panopin.setOpacity(.5);
     });
     pv.on("mouseup", radar);
     
