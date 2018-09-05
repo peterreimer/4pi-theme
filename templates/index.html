@@ -1,17 +1,5 @@
 {% extends "base.html" %}
 {% block hero %}
-{% if output_file == 'index.html' %}
-<div class="hero banner" style="background-image: url({{ SITEURL }}/{{ SIZES_FOLDER }}/{{ latest_scene.scene }}/{{ latest_scene.scene }}-banner.jpg);">
-    
-    <div class="latest-panorama">
-        <span>Neuestes Panorama, {{ latest_scene.locale_date }}</span>
-        <h2>
-            <a href="{{ SITEURL }}/{{ latest_scene.url }}">{{ latest_scene.title }}</a>
-        </h2>
-    </div>
-
-</div>
-{% endif %}
 {% endblock hero %}
 
 {% block content %}
@@ -19,15 +7,17 @@
 
 <div class='posts'>
 {% for article in articles_page.object_list %}
-    {% if article.latest and  output_file == 'index.html' %}
-        {# on homepage index.html the latest scene/pano is treated separatly #}
-    {% else %}
     <section>
         <header class="post-header">
             <h2 class="post-title">
+                {% if article.tour %}
+                    <span class="tour">{{ article.tour }}</span>
+                    <span class="heading">
+                {% endif %}
                 <a href="{{ SITEURL }}/{{ article.url }}"
                    rel="bookmark"
                    title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+               </span>
             </h2>
             <p class="post-meta">
                 <span title="{{ article.date.isoformat() }}">
@@ -50,7 +40,6 @@
             <div class="large-12 columns"> {{ article.summary }} </div><!-- /.entry-content -->
         </div>
     </section>
-    {% endif %}
 {% endfor %}
 
 
@@ -60,5 +49,3 @@
 {% block footer %}
 {% include 'pagination.html' %}
 {% endblock %}
-
-
