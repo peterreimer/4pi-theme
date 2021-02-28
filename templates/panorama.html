@@ -10,6 +10,7 @@
     <meta property="place:location:longitude" content="{{ article.exif.lng}}" /> 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="{{ TWITTER_USERNAME }}" />
+    <meta name="twitter:image" content="{{ SITEURL }}/{{ PANNELLUM.sizes_folder }}/{{article.scene}}/{{article.scene}}-preview.jpg" />
     {% for keyword in article.keywords %}
     <meta name="keywords" contents="{{keyword}}" />
     {% endfor %}
